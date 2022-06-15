@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Put name of student and diploma title here-->
+    <title>Plug and Plot with Internet data | GSOC 2022</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- load google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- load font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <!-- load custom styles -->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/e70d3c92bf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar fixed-top navbar-expand-lg navbar-light bg-light"
+        id="mainNavBar"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">GSOC 2022</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="#title">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#overview">Benefits to Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#implementation"
+                  >Implementation & Deliverables</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#people">People</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="title" class="container text-center py-5 px-5">
+        <!-- put the diploma title below -->
+        <h1>Plug and Plot with Internet data</h1>
+        <h3>Reusable visualizations for Internet open datasets</h3>
+      </div>
+      <div class="jumbotron container px-5">
+        <b>“Plug and plot”</b>
+        <p>
+          The building blocks will be developed in the ObservableHQ platform,
+          which uses the popular visualization library D3.js. The building
+          blocks will be open-source code, published as templates in the
+          ObservableHQ platform. Any user would be able to fork/copy a template
+          and plug their own data, and/or modify it according to their needs.
+          Since the code will be in D3.js, the building blocks can be re-usable
+          by any javascript component, not only in ObservableHQ.
+        </p>
+        <b>Targeted users</b>
+        <p>
+          Internet researchers and network operators. Internet data: There exist
+          various types of Internet data, mainly, tabular data (e.g., ASN or
+          latency value), timeseries (e.g., AS hegemony per day), graphs (e.g.,
+          routing graph), paths (e.g., traceroutes, BGP paths). We will create
+          at least one building block that can visualize each type of data.
+        </p>
+        <b>Types of plots</b>
+        <p>
+          Different types of data need different types of visualizations. We
+          will consider a range of visualizations, such as, sankey diagrams
+          (very useful to visualize relations, paths, etc. in Internet data),
+          graphs, geo-maps, distribution plots (e.g., histograms, violin plots),
+          dendrograms, heatmaps.
+        </p>
+      </div>
+    </header>
+    <main class="container px-5">
+      <section id="overview" class="pt-5">
+        <h2 class="text-center">Benefits to Community</h2>
+        <hr />
+        <div id="overview-intro">
+          <div class="row">
+            <div class="col">
+              <b>“Plug and plot”</b>
+              <p>
+                The building blocks will be developed in the ObservableHQ
+                platform, which uses the popular visualization library D3.js.
+                The building blocks will be open-source code, published as
+                templates in the ObservableHQ platform. Any user would be able
+                to fork/copy a template and plug their own data, and/or modify
+                it according to their needs. Since the code will be in D3.js,
+                the building blocks can be re-usable by any javascript
+                component, not only in ObservableHQ.
+              </p>
+              <b>Examples of selected events</b>
+              <p>
+                The project will demonstrate the building blocks through a set
+                of selected use cases, posted as ObservableHQ posts with text
+                describing the use of the data and with visualizations showing
+                the analyses. These posts will serve as hands-on tutorials on
+                how to use the building blocks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="implementation" class="pt-5">
+        <h2 class="text-center">Implementation & Deliverables</h2>
+        <hr />
+        <div id="overview-intro">
+          <div class="row">
+            <h3 class="pt-3">Task 1 - Define data format</h3>
+            <div class="col">
+              <p>
+                Investigate the types of data, the data sources, and the main
+                types of analyses that are of interest to users. Define the data
+                formats to be used. For example, json files with traceroutes
+                (common format for RIPE Atlas data), or json files with IHR
+                data, or lists of BGP paths, etc
+              </p>
+              <br />
+              <b>Deliverable 1</b
+              ><span class="badg"
+                >Definition of at least 3 data format types</span
+              >
+            </div>
+          </div>
+          <div class="row mt-5">
+            <h3 class="pt-3">Task 2 - Exploration of visualization option</h3>
+            <div class="col">
+              <p>
+                Explore all the catalog of data visualization plots offered in
+                Observable and D3.js websites. Investigate what types of plots
+                could fit to each type of the defined data formats. Come up with
+                2 to 3 suggestions of plot alternatives for every type of data.
+                Also, explore options provided by Observable for filtering,
+                which will interact with the visualizations (e.g., select a time
+                range, or select a part of data)
+              </p>
+              <br />
+              <b>Deliverable 2</b
+              ><span class="badg"
+                >Selection of visualization options, and filtering options</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <p class="mt-4">
+              For each type of Internet data, as defined above, we will define
+              and implement a group of visuals. Initial ideas for these groups
+              are:
+            </p>
+            <div class="col mt-5 p-5">
+              <b>Example:</b> A sankey graph for AS Hegemony
+              <p>
+                A user selects an ASN, and a sankey graph that depicts the other
+                ASNs that are related to this ASN in the AS-hegemony dataset. In
+                a sankey graph boxes correspond to ASNs and edges to relations
+                between them. Multiple layers of boxes (i.e., more than 2) can
+                be considered to depict ASN relationships of more depth.
+                Coloring can be based on ASN features (e.g., country), and
+                filtering can be used to filter ASNs by specific features.
+              </p>
+            </div>
+            <div class="col">
+              <figure class="figure">
+                <img src="images/sankey.png" alt="image 1" />
+                <figcaption class="figure-caption text-center">
+                  Visuals depicting relations between networks (such as, shankey
+                  plots, heatmaps, graphs)
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <figure class="figure">
+                <img src="images/relationship.png" alt="image 3" />
+              </figure>
+            </div>
+            <div class="col mt-5 p-5">
+              <b>Example:</b> Graph visualization of ASN relationships in a
+              country
+              <p>
+                A graph that visualized the AS hegemony of a set of networks
+                with specific characteristics. E.g., a user can input a list of
+                ASNs, or select a list of countries, or select a list of ASN
+                types (e.g., CDNs) and the graph will show all relations between
+                these ASNs from the AS hegemony data, with nodes being the ASNs,
+                edges their connections, and sizes the AS hegemony scores.
+                Hovering over nodes/ASNs will give more information about nodes.
+                Coloring can be based on ASN features (e.g., country), and
+                filtering can be used to filter ASNs by specific features.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mt-5 p-5">
+              <b>Example:</b> Prefix visibility by route collectors
+              <p>
+                A visualization depicting the visibility of specific prefixes by
+                the different route collectors upon different time points. Users
+                will be able to see how a prefix is seen by different points
+                (different rows or lines) over time (x-axis). Coloring can be
+                used to depict path length, origins ASes, latencies, etc.
+              </p>
+            </div>
+            <div class="col">
+              <figure class="figure">
+                <img src="images/timeseries.png" alt="image 3" />
+                <figcaption class="figure-caption text-center">
+                  Visuals depicting timeseries data
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <figure class="figure">
+                <img src="images/map.png" alt="image 4" />
+                <figcaption class="figure-caption text-center">
+                  Visuals depicting geographical information along with
+                  characteristics of networks
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col mt-5 p-5">
+              <b>Example:</b> Map for RIPE Atlas probes
+              <p>
+                A geographical map depicting RIPE Atlas probes. There will be
+                filters to select probes of specific types, tags, countries,
+                etc. Also, there will be filters for selecting a list of probes
+                (e.g., used in a measurement). Coloring can be used to depict
+                probe characteristics (e.g., tags) or similarity of probes -if
+                possible to obtain relevant data (e.g., from the AI4NetMon
+                project https://sermpezis.github.io/ai4netmon/ )
+              </p>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <h3 class="pt-3">
+              Tasks 3 / 4 / 5 - Develop first / second / third group of
+              buildings blocks
+            </h3>
+            <div class="col">
+              <p>
+                Develop the first / second / third group of building blocks to
+                depict a set of Internet data types, as defined above
+              </p>
+              <br />
+              <b>Deliverable 3 / 4 / 5</b
+              ><span class="badg"
+                >Development of at least 3 visualization building blocks</span
+              >
+            </div>
+          </div>
+          <div class="row mt-5">
+            <h3 class="pt-3">Task 6 - Examples and documentation</h3>
+            <div class="col">
+              <p>
+                Write 2 to 3 blog posts on Observable that will use one or more
+                of the visualization building blocks. Each post will analyze a
+                real example (e.g., event) where Internet data can provide
+                insights, and will serve as an example of using the developed
+                building blocks. Also, for each visualization, detailed
+                instructions on how to use it and adapt it will be given.
+              </p>
+              <br />
+              <b>Deliverable 6</b
+              ><span class="badg">Create two examples, and documentation</span>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <h3 class="pt-3">Task 7 - Final debugging and revising</h3>
+            <div class="col">
+              <p>
+                Revise the whole project one final time along with my mentors
+                and correct any mistakes or inaccuracies in the code,
+                documentation, analysis and blog posts
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="people" class="pt-5">
+        <h2 class="text-center">People</h2>
+        <hr />
+        <div class="row">
+          <div class="col-12 col-lg-7">
+            <h6>Mentors</h6>
+            <ul class="people">
+              <li>
+                <strong
+                  ><i class="fas fa-user-circle"></i
+                  ><a href="https://twitter.com/romain_fontugne">
+                    Romain Fontugne</a
+                  ></strong
+                >, IIJ Research Lab<br />
+              </li>
+              <li>
+                <strong
+                  ><i class="fas fa-user-circle"></i
+                  ><a href="https://labs.ripe.net/author/emileaben/">
+                    Emile Aben</a
+                  ></strong
+                >, RIPE NCC<br />
+              </li>
+              <li>
+                <i class="fas fa-user-circle"></i>
+                <strong
+                  ><a href="https://sermpezis.github.io"
+                    >Pavlos Sermpezis</a
+                  ></strong
+                >, Datalab, AUTh
+              </li>
+            </ul>
+            <h6>Contributors</h6>
+            <ul class="people">
+              <li>
+                <strong
+                  ><i class="fas fa-user-circle"></i
+                  ><a href="https://www.tmeletlidis.tech/">
+                    Tasos Meletlidis</a
+                  ></strong
+                >, Datalab, AUTh<br />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="pt-5">
+        <h2 class="text-center">Contact</h2>
+        <hr />
+        <div class="row">
+          <div class="col">
+            <p>
+              <i class="far fa-envelope"></i> tmeletlidis@protonmail.com (Tasos
+              Meletlidis)
+            </p>
+            <p>
+              <i class="fab fa-github-square"></i>
+              <a target="_blank" href="https://github.com/TasosY2K/"
+                >@TasosY2K</a
+              >
+            </p>
+            <p>
+              <i class="fab fa-linkedin-in"></i>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/tasos-meletlidis/"
+                >@tasos-meletlidis</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <p class="text-center">
+              &copy; 2022 Anastasios-Theodosios (Tasos) Meletlidis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
