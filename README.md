@@ -1,2 +1,2 @@
 # GSOC-2022
-Plug and Plot with Internet data
+Site for GSOC 2022
