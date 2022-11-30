@@ -238,3 +238,12 @@ ul {
 	background-color: #28cdb5;
 	border-radius: 20px;
 }
+
+.badg:hover {
+	color: #fff !important;
+	transform: translateX(5px) !important;
+	transition-duration: 0.3s;
+	box-shadow: 1px 5px 14px -1px rgba(0,230,203,0.75);
+	-webkit-box-shadow: 1px 5px 14px -1px rgba(0,230,203,0.75);
+	-moz-box-shadow: 1px 5px 14px -1px rgba(0,230,203,0.75);
+}

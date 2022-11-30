@@ -111,7 +111,13 @@
     <main class="container px-5">
       <section id="overview" class="pt-5">
         <h2 class="text-center">Funded by</h2>
-        <img class="img-fluid" height="300" width="300" src="images/gsoc.png" alt="Google Summer of Code">
+        <img
+          class="img-fluid"
+          height="300"
+          width="300"
+          src="images/gsoc.png"
+          alt="Google Summer of Code"
+        />
       </section>
       <section id="overview" class="pt-5">
         <h2 class="text-center">Benefits to Community</h2>
@@ -143,179 +149,134 @@
         </div>
       </section>
       <section id="implementation" class="pt-5">
-        <h2 class="text-center">Implementation & Deliverables</h2>
+        <h2 class="text-center">Results</h2>
         <hr />
         <div id="overview-intro">
           <div class="row">
-            <h3 class="pt-3">Task 1 - Define data format</h3>
+            <h3 class="pt-3">Overview</h3>
             <div class="col">
               <p>
-                Investigate the types of data, the data sources, and the main
-                types of analyses that are of interest to users. Define the data
-                formats to be used. For example, json files with traceroutes
-                (common format for RIPE Atlas data), or json files with IHR
-                data, or lists of BGP paths, etc
+                The goal of this project is to give researchers an easy way to
+                interact with and embed Internet Health Report data on their own
+                posts whether those are within the ObservableHQ platform or
+                hosted externally.
+                <br />
+                <br />
+                You can (i) directly use the ObservableHQ notebook to visualize
+                the queried data with your own customized parameters, and/or
+                (ii) copy the code and use it in your own page/notebook (and you
+                could also then embed the visualizations as iframes). Below, you
+                can find all the visualizations, which are also provided -for
+                your convenience- in separate notebooks.
               </p>
               <br />
-              <b>Deliverable 1</b
-              ><span class="badg"
-                >Definition of at least 3 data format types</span
+              <b>AS Dependencies (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/depedency-timeseries?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
               >
-            </div>
-          </div>
-          <div class="row mt-5">
-            <h3 class="pt-3">Task 2 - Exploration of visualization option</h3>
-            <div class="col">
-              <p>
-                Explore all the catalog of data visualization plots offered in
-                Observable and D3.js websites. Investigate what types of plots
-                could fit to each type of the defined data formats. Come up with
-                2 to 3 suggestions of plot alternatives for every type of data.
-                Also, explore options provided by Observable for filtering,
-                which will interact with the visualizations (e.g., select a time
-                range, or select a part of data)
-              </p>
+
               <br />
-              <b>Deliverable 2</b
-              ><span class="badg"
-                >Selection of visualization options, and filtering options</span
+              <br />
+
+              <b>AS Dependencies Grouped By Country (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependency-timeseries-grouped-by-country?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
               >
-            </div>
-          </div>
-          <div class="row">
-            <p class="mt-4">
-              For each type of Internet data, as defined above, we will define
-              and implement a group of visuals. Initial ideas for these groups
-              are:
-            </p>
-            <div class="col mt-5 p-5">
-              <b>Example:</b> A sankey graph for AS Hegemony
-              <p>
-                A user selects an ASN, and a sankey graph that depicts the other
-                ASNs that are related to this ASN in the AS-hegemony dataset. In
-                a sankey graph boxes correspond to ASNs and edges to relations
-                between them. Multiple layers of boxes (i.e., more than 2) can
-                be considered to depict ASN relationships of more depth.
-                Coloring can be based on ASN features (e.g., country), and
-                filtering can be used to filter ASNs by specific features.
-              </p>
-            </div>
-            <div class="col">
-              <figure class="figure">
-                <img src="images/sankey.png" alt="image 1" />
-                <figcaption class="figure-caption text-center">
-                  Visuals depicting relations between networks (such as, shankey
-                  plots, heatmaps, graphs)
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <figure class="figure">
-                <img src="images/relationship.png" alt="image 3" />
-              </figure>
-            </div>
-            <div class="col mt-5 p-5">
-              <b>Example:</b> Graph visualization of ASN relationships in a
-              country
-              <p>
-                A graph that visualized the AS hegemony of a set of networks
-                with specific characteristics. E.g., a user can input a list of
-                ASNs, or select a list of countries, or select a list of ASN
-                types (e.g., CDNs) and the graph will show all relations between
-                these ASNs from the AS hegemony data, with nodes being the ASNs,
-                edges their connections, and sizes the AS hegemony scores.
-                Hovering over nodes/ASNs will give more information about nodes.
-                Coloring can be based on ASN features (e.g., country), and
-                filtering can be used to filter ASNs by specific features.
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col mt-5 p-5">
-              <b>Example:</b> Prefix visibility by route collectors
-              <p>
-                A visualization depicting the visibility of specific prefixes by
-                the different route collectors upon different time points. Users
-                will be able to see how a prefix is seen by different points
-                (different rows or lines) over time (x-axis). Coloring can be
-                used to depict path length, origins ASes, latencies, etc.
-              </p>
-            </div>
-            <div class="col">
-              <figure class="figure">
-                <img src="images/timeseries.png" alt="image 3" />
-                <figcaption class="figure-caption text-center">
-                  Visuals depicting timeseries data
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <figure class="figure">
-                <img src="images/map.png" alt="image 4" />
-                <figcaption class="figure-caption text-center">
-                  Visuals depicting geographical information along with
-                  characteristics of networks
-                </figcaption>
-              </figure>
-            </div>
-            <div class="col mt-5 p-5">
-              <b>Example:</b> Map for RIPE Atlas probes
-              <p>
-                A geographical map depicting RIPE Atlas probes. There will be
-                filters to select probes of specific types, tags, countries,
-                etc. Also, there will be filters for selecting a list of probes
-                (e.g., used in a measurement). Coloring can be used to depict
-                probe characteristics (e.g., tags) or similarity of probes -if
-                possible to obtain relevant data (e.g., from the AI4NetMon
-                project https://sermpezis.github.io/ai4netmon/ )
-              </p>
-            </div>
-          </div>
-          <div class="row mt-5">
-            <h3 class="pt-3">
-              Tasks 3 / 4 / 5 - Develop first / second / third group of
-              buildings blocks
-            </h3>
-            <div class="col">
-              <p>
-                Develop the first / second / third group of building blocks to
-                depict a set of Internet data types, as defined above
-              </p>
+
               <br />
-              <b>Deliverable 3 / 4 / 5</b
-              ><span class="badg"
-                >Development of at least 3 visualization building blocks</span
+              <br />
+
+              <b>Number of Dependent Networks (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependent-timeseries?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
               >
-            </div>
-          </div>
-          <div class="row mt-5">
-            <h3 class="pt-3">Task 6 - Examples and documentation</h3>
-            <div class="col">
-              <p>
-                Write 2 to 3 blog posts on Observable that will use one or more
-                of the visualization building blocks. Each post will analyze a
-                real example (e.g., event) where Internet data can provide
-                insights, and will serve as an example of using the developed
-                building blocks. Also, for each visualization, detailed
-                instructions on how to use it and adapt it will be given.
-              </p>
+
               <br />
-              <b>Deliverable 6</b
-              ><span class="badg">Create two examples, and documentation</span>
-            </div>
-          </div>
-          <div class="row mt-5">
-            <h3 class="pt-3">Task 7 - Final debugging and revising</h3>
-            <div class="col">
-              <p>
-                Revise the whole project one final time along with my mentors
-                and correct any mistakes or inaccuracies in the code,
-                documentation, analysis and blog posts
-              </p>
+              <br />
+
+              <b>Dependent Networks Grouped By Country (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependent-timeseries-grouped-by-country?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+
+              <b>Dependent Networks Grouped By Type (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependent-timeseries-grouped-by-type?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+
+              <b>AS Dependencies Difference (Table)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependency-difference-table?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+
+              <b>AS Dependencies Difference (Bar)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependency-difference-bar?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+
+              <b
+                >AS Dependencies for Large Time Windows [with sampling]
+                (Timeseries)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependency-timeseries-sampling?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+              <b>Two Hops AS Dependencies (Sankey Plot)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/dependency-sankey?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
+
+              <br />
+              <br />
+
+              <b>Country Hegemony Graph (Graph Plot)</b
+              ><a
+                class="badg"
+                target="_blank"
+                href="https://observablehq.com/@tasos/country-graph?collection=@tasos/reusable-ihr-plots"
+                >Link to component</a
+              >
             </div>
           </div>
         </div>
